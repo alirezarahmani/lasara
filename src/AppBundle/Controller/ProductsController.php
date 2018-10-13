@@ -53,7 +53,7 @@ class ProductsController extends Controller
     public function search(ApiApplicationRequest $request, ApiResponseInterface $apiJsonResponse)
     {
         try {
-            $products = $this->productService->getProducts($request->getRequest()->query->all(), new ProductApiInputValidation());
+            $products = $this->productService->getProducts($request->getRequest()->query->all());
             $apiJsonResponse->success($products);
         } catch (\InvalidArgumentException $exception) {
             $apiJsonResponse->error($exception->getMessage(), $exception->getCode());
