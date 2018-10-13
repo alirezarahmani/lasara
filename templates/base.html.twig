@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+    </head>
+    <body>
+    <div id="sidebar">
+        {{ render(controller(
+            'AppBundle\Controller\ProductsController::getAll',
+            { 'max': 15 }
+        )) }}
+    </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+List of products:
+
+{% if products is empty  %}
+    <div>not product found</div>
+{%  else %}
+    <div>
+        {% for product in products %}
+               <div > {{ product.name }} </div>
+               <div > {{ product.sku }} </div>
+               <div > {{ product.price }} </div>
+        {% endfor %}
+    </div>
+{% endif %}

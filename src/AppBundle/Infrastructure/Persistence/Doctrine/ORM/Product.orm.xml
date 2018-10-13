@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          http://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="AppBundle\Model\Product"
+            table="product"
+            repository-class="AppBundle\Infrastructure\Persistence\Doctrine\ProductRepository">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO" />
+            <sequence-generator sequence-name="product_seq" allocation-size="100" initial-value="1" />
+        </id>
+        <field name="sku" type="string"  nullable="false" />
+        <field name="name" type="string"  nullable="false" />
+        <field name="price" type="product_price" nullable="false" />
+        <field name="createdAt" type="datetime" nullable="false" />
+    </entity>
+</doctrine-mapping>
