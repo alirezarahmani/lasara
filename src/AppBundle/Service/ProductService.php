@@ -46,12 +46,12 @@ class ProductService
         $params = [];
 
         if (isset($inputs['to'])) {
-            Assertion::date($inputs['to'],'Y-m-d H:i:s', 'sorry, to date is wrong');
+            Assertion::date($inputs['to'],'Y-m-d H:i:s', 'sorry, to date is wrong, make sure the format Y-m-d H:i:s should be like this');
             $params['to'] = $inputs['to'];
         }
 
         if (isset($inputs['from'])) {
-            Assertion::date($inputs['from'],'Y-m-d H:i:s', 'sorry, from date is wrong');
+            Assertion::date($inputs['from'],'Y-m-d H:i:s', 'sorry, from date is wrong, make sure the format Y-m-d H:i:s should be like this');
             $params['from'] = $inputs['from'];
         }
 

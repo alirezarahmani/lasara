@@ -26,11 +26,11 @@ class ProductRepository extends EntityRepository implements ProductRepositoryInt
     {
         $qb = $this->createQueryBuilder('p');
         if (isset($params['from'])) {
-            $qb->andWhere(':createdAt >= :from')
-                ->setParameter('to', $params['from']);
+            $qb->where('p.createdAt >= :from')
+                ->setParameter('from', $params['from']);
         }
         if (isset($params['to'])) {
-            $qb->andWhere(':createdAt <= :to')
+            $qb->andWhere('p.createdAt <= :to')
                 ->setParameter('to', $params['to']);
         }
         return $qb->getQuery()->getResult();
