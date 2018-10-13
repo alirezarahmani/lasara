@@ -17,11 +17,13 @@ class ProductApiInputValidation extends LazyAssert implements ValidationInterfac
             ->thatInArray('name')
             ->notEmpty('make sure have value')
             ->string('it should be string')
+            ->minLength(4, 'too short')
             ->maxLength(255, 'too long');
         $assert
             ->thatInArray('sku')
             ->notEmpty('make sure have value')
             ->string('it should be string')
+            ->minLength(4, 'too short')
             ->maxLength(255, 'too long');
         $assert
             ->thatInArray('price')
